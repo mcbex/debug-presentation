@@ -1,41 +1,34 @@
 define(['backbone',
         'views/thumbnailView'
     ], function(Backbone, ThumbnailView) {
-    var App = window.App = {
 
-        init: function(options) {
-            var AppRouter = Backbone.Router.extend({
-                routes: {
-                    '/': 'loadHome'
-                }
-            });
+    var AppView = Backbone.View.extend({
 
-            this.router = new AppRouter;
-            Backbone.history.start();
-            this.loadHome();
+        initialize: function() {
+           this.render();
         },
 
-        loadHome: function() {
-            var self = this, $image;
+        render: function() {
+            var view = this, thumbnailView, $image;
 
-            self.thumbnailView = new ThumbnailView;
-            self.thumbnailView.$el.appendTo('body');
+            thumbnailView = new ThumbnailView;
+            thumbnailView.$el.appendTo('body');
 
-            self.thumbnailView.on('rendered', function() {
+            thumbnailView.on('rendered', function() {
                 // async debugger?
                 console.log(new Date().getTime());
                 $image = $('img');
                 $image.width(50);
 
-                self.context = $('#canvas').get(0).getContext('2d');
-                self.context.drawImage($image.get(0), 0, 0, $image.width(), $image.height());
-                self.drawHorribleTable();
+                view.context = $('#canvas').get(0).getContext('2d');
+                view.context.drawImage($image.get(0), 0, 0, $image.width(), $image.height());
+                view.drawHorribleTable();
             });
         },
 
         // on thumbnail click fetch big image and render to canvas?
         drawHorribleTable: function() {
-                console.log(new Date().getTime());
+            console.log(new Date().getTime());
             var width = 100, height = 50,
                 data = this.context.getImageData(0, 0, width, height),
                 $table = $('<table id="horrible-table">'), $row, $cell;
@@ -67,11 +60,10 @@ define(['backbone',
                     }
                 });
             });
-                console.log(new Date().getTime());
+            console.log(new Date().getTime());
         }
+    });
 
-    }
-
-    return App;
+    return AppView;
 });
 
