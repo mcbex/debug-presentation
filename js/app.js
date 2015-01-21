@@ -1,4 +1,6 @@
-var Backbone = require('backbone');
+define(['backbone',
+        'views/thumbnailView'
+    ], function(Backbone, ThumbnailView) {
 
 var App = global.App = {
 
@@ -6,6 +8,6 @@ var App = global.App = {
         console.log(options);
     }
 
-}
+    return App;
+});
 
-App.init('hello world');
