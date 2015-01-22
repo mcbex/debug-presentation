@@ -46,7 +46,7 @@ define(['backbone', 'async'], function(Backbone, async) {
 
         selectImage: function(e) {
             var imageName = e.currentTarget.className,
-                image = this.$el.find('.image-container').find('img.' + imageName),
+                image = this.$el.find('.image-container').find('img.' + imageName);
                 view = this;
 
             if (image.length) {

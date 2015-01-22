@@ -9,29 +9,25 @@ define(['backbone'], function(Backbone) {
         pixelSize: 4,
 
         initialize: function() {
-            var view = this;
+            var self = this;
 
             this.listenTo(this.model, 'change:context', function(m) {
                 if (m.get('context')) {
-                    view.renderTable();
+                    view.render();
                 } else {
                     view.clearTable();
                 }
             });
-            this.render();
         },
 
         render: function() {
-            this.$el.html('<div class="editor">');
-        },
-
-        renderTable: function() {
             console.log(new Date().getTime());
             var width = this.model.get('context').canvas.width,
                 height = this.model.get('context').canvas.height,
                 data = this.model.get('context').getImageData(0, 0, width, height),
                 $table = $('<table>'), html = '<tr>', view = this;
 
+            this.$el.html('<div class="editor">');
 
             for (var i = 0, l = data.data.length; i < l; i += 4) {
                 if (i != 0 && !(i % (width * 4))) {
