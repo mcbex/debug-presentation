@@ -7,7 +7,7 @@ define([], function() {
 
             $div.append('<button id="ajax">Click to make 10 buttons</button>');
 
-            $('#ajax').on('click', function() {
+            $('#ajx').on('click', function() {
                 for (var i = 0, l = 10; i < l; i++) {
                     $.ajax({
                         url: 'http://httpbin.org/get',
