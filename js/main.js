@@ -19,9 +19,11 @@ require.config({
     }
 });
 
-require(['jquery', 'underscore', 'app'], function($, _, AppView) {
+require(['jquery', 'underscore', 'app', 'examples'], function($, _, AppView, examples) {
     window.$ = $;
     window._ = _;
 
     new AppView;
+//    examples.setUp();
+
 });
