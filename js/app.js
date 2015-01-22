@@ -34,7 +34,6 @@ define(['backbone',
             editorView.$el.appendTo(view.$el);
 
             thumbnailView.on('imageSelected', function() {
-                // async debugger?
                 console.log(new Date().getTime());
                 $image = this.getSelectedImage();
                 $image.width(view.imageSize);
