@@ -59,10 +59,6 @@ define(['backbone'], function(Backbone) {
 
             view.$el.find('.editor').append($table);
 
-//            $('td').on('click', function(e) {
-//                view.changeColor(e);
-//            });
-
             console.log(new Date().getTime());
         },
 
@@ -83,17 +79,7 @@ define(['backbone'], function(Backbone) {
             $('.' + cls).css({
                 'background-color': 'rgb(255,0,0)'
             }).removeClass(cls).addClass('255_0_0');
-        },
-
-//        changeColor: function(e) {
-//            var color = $(e.currentTarget).css('background-color');
-//
-//            _.forEach($('td'), function(t) {
-//                if ($(t).css('background-color') == color) {
-//                    $(t).css('background-color', 'rgb(255,0,0)');
-//                }
-//            })
-//        }
+        }
 
     });
 

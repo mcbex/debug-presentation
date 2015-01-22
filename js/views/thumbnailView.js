@@ -18,12 +18,6 @@ define(['backbone', 'async'], function(Backbone, async) {
         },
 
         render: function() {
-
-            // bug - images will have 0 height when the canvas is drawn
-//            _.forEach(this.images, function(i) {
-//                view.$el.append('<img src="' + i + '"/>');
-//            });
-            // draw chrome here
             this.$el.html('<div class="image-container">');
             this.loadImages();
         },
