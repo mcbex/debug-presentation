@@ -23,7 +23,7 @@ require(['jquery', 'underscore', 'app', 'examples'], function($, _, AppView, exa
     window.$ = $;
     window._ = _;
 
-    new AppView;
-//    examples.setUp();
+//    new AppView;
+    examples.init();
 
 });
