@@ -5,23 +5,23 @@ define(['backbone'], function(Backbone) {
         pixelSize: 4,
 
         initialize: function() {
-            var view = this;
+            var self = this;
 
             this.listenTo(this.model, 'change:context', function(m) {
                 if (m.get('context')) {
-                    view.renderTable();
+                    view.render();
                 } else {
                     view.clearTable();
                 }
             });
-            this.render();
+//            this.render();
         },
 
         render: function() {
             this.$el.html('<div class="editor">');
         },
 
-        renderTable: function() {
+        render: function() {
             console.log(new Date().getTime());
             var width = this.model.get('context').canvas.width,
                 height = this.model.get('context').canvas.height,
