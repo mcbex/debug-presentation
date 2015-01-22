@@ -1,4 +1,29 @@
 body {
-    border: 5px solid purple;
+    border: 12px solid purple;
+}
+
+#app {
+    overflow: hidden;
+    padding: 50px;
+}
+
+#canvas {
+    width: 500px;
+}
+
+#canvas, .image-container {
+    position: absolute;
+    right: 99999px;
+}
+
+#thumbnails {
+    float: left;
+    padding-right: 50px;
+}
+
+#thumbnails img {
+    display: block;
+    margin-bottom: 20px;
+    border: 5px solid #DEDEDE;
 }
 
