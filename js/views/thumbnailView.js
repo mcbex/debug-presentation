@@ -6,7 +6,7 @@ define(['backbone', 'async'], function(Backbone, async) {
 
         id: 'thumbnails',
 
-        images: ['daisies', 'abstract'],
+        images: ['daisies', 'abstract', 'bieber'],
 
         events: {
             'click img': 'selectImage'
