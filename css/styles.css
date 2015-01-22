@@ -1,10 +1,9 @@
-body {
-    border: 12px solid purple;
-}
-
 #app {
     overflow: hidden;
     padding: 50px;
+    margin: 20px;
+    background-color: #EFEFEF;
+    border: 5px solid #DEDEDE;
 }
 
 #canvas {
