@@ -30,7 +30,7 @@ define(['backbone'], function(Backbone) {
             var width = this.model.get('context').canvas.width,
                 height = this.model.get('context').canvas.height,
                 data = this.model.get('context').getImageData(0, 0, width, height),
-                $table = $('<table id="horrible-table">'), html = '<tr>', view = this;
+                $table = $('<table>'), html = '<tr>', view = this;
 
 
             for (var i = 0, l = data.data.length; i < l; i += 4) {

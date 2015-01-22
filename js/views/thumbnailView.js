@@ -39,7 +39,6 @@ define(['backbone', 'async'], function(Backbone, async) {
                         cb();
                     });
             }, function(err) {
-                // no errors yet
                 console.log(new Date().getTime());
                 err ? view.trigger('renderError', err) : view.trigger('rendered');
             });
